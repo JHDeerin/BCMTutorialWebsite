@@ -1,0 +1,120 @@
+body {
+    background: #132535;
+    color: #ebeff0;
+    font-family: 'Open Sans', sans-serif; /*Explain how all/most "children" elements inside of this one will "inherit" these styles and use the same font/color/font-size*/
+
+    /*Don't change padding/margin to 0 until the nav menu*/
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth; /*Don't add until the end when talking about cool CSS stuff we didn't cover*/
+}
+
+/*Don't add this main part (HTML or CSS) either, until towards the end when we want to do one quick fix so that the page is readable on large things*/
+main {
+    margin: 0 auto; /*Note that this is a quick trick to get things centered*/
+    padding: 1em;
+    width: 100%;
+    max-width: 850px;
+}
+
+h1, h2, h3 {
+    font-size: 3em;
+    margin: 10px 0;
+}
+h1 {
+    font-size: 4em;
+    text-align: center;
+}
+h2 {
+    font-size: 3em;
+}
+h3 {
+    font-size: 2em;
+}
+
+a {
+    text-decoration: none;
+    color: #105a9d;
+}
+a:hover {
+    text-decoration: underline;
+    /*Emphasize this is a normal CSS block and we could've done absolutely anything*/
+}
+
+/*Make styling the navigation the first big piece we style (probably give its own video?); introduce margin/padding, width/height, and flex-box basics here*/
+
+#navigation {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    background: #105a9d;
+}
+#navigation li {
+    height: 100%;
+    width: 100%;
+    list-style: none;
+}
+#navigation li a {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 5px;
+    color: #ebeff0;
+    height: 100%;
+}
+#navigation li a:hover {
+    background: #ebeff0;
+    color: #105a9d;
+    text-decoration: none;
+}
+
+/*Next up, focus on making the image grid, introducing classes*/
+.image-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.image-grid img {
+    height: 300px;
+    border: solid 1px white; /*Introduce borders to separate images*/
+}
+
+/*Finally, style the dojo; first, set up the dojo, then turn David to face the right way, then finally style the button (even using a kung-fu font)*/
+#david-dojo-arena {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 500px;
+    height: 300px;
+    background: white;
+    border: solid 10px #2a3b6a;
+    border-radius: 5px;
+}
+
+#david-dojo-david {
+    transform: scaleX(-1); /*Use a trick that scaling by a negative is the same thing as flipping (if you've taken linear algebra, you should know this, and shame on you for forgetting)*/
+}
+
+#david-dojo-fight {
+    /*Look on Google Fonts for a Karate looking font*/
+    font-family: "Permanent Marker", cursive;
+    margin: 0;
+    padding: 5px;
+    font-size: 2em;
+    color: inherit;
+    background: red;
+    border: none;
+}
+#david-dojo-fight:hover {
+    padding: 10px;
+    background: url("img/david_karate.PNG");
+    background-size: cover; /*Note background is way too zoomed in at first, but we can adjust that*/
+}
