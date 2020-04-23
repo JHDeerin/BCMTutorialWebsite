@@ -88,6 +88,8 @@ a:hover {
 
 /*Finally, style the dojo; first, set up the dojo, then turn David to face the right way, then finally style the button (even using a kung-fu font)*/
 #david-dojo-arena {
+    /*Need to set container position as absolute so child positioning works*/
+    position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -100,7 +102,12 @@ a:hover {
 }
 
 #david-dojo-david {
+    position: absolute;
     transform: scaleX(-1); /*Use a trick that scaling by a negative is the same thing as flipping (if you've taken linear algebra, you should know this, and shame on you for forgetting)*/
+}
+#david-dojo-opponent {
+    position: absolute;
+    left: 400px;
 }
 
 #david-dojo-fight {
