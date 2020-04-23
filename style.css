@@ -86,10 +86,16 @@ a:hover {
     border: solid 1px white; /*Introduce borders to separate images*/
 }
 
-#degrees {
+.hot-text {
     padding: 2px;
     color: lightcoral;
     background: lightyellow;
+    border-radius: 5px;
+}
+.cold-text {
+    padding: 2px;
+    color: aquamarine;
+    background: lightskyblue;
     border-radius: 5px;
 }
 
