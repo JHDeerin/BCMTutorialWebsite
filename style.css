@@ -86,6 +86,13 @@ a:hover {
     border: solid 1px white; /*Introduce borders to separate images*/
 }
 
+#degrees {
+    padding: 2px;
+    color: lightcoral;
+    background: lightyellow;
+    border-radius: 5px;
+}
+
 /*Finally, style the dojo; first, set up the dojo, then turn David to face the right way, then finally style the button (even using a kung-fu font)*/
 #david-dojo-arena {
     /*Need to set container position as absolute so child positioning works*/
