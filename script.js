@@ -16,7 +16,7 @@ function circle_area(radius, isFromIndiana) {
 
 console.log("Area: " + circle_area(circleRadius, false));
 
-for (radius = 1; radius < 5; radius++) {
+for (let radius = 1; radius < 5; radius++) {
     console.log("Indiana Area: " + circle_area(radius, true));
 }
 
@@ -53,10 +53,55 @@ function update_temperature_text() {
     if (temperature < 80) {
         TEMPERATURE_TEXT.classList.remove("hot-text");
         TEMPERATURE_TEXT.classList.add("cold-text");
-        LAUREL_QUOTE.innerText = "This is not hot";
+        LAUREL_QUOTE.innerText = "It is not hot";
     } else {
         TEMPERATURE_TEXT.classList.remove("cold-text");
         TEMPERATURE_TEXT.classList.add("hot-text");
-        LAUREL_QUOTE.innerText = "This is hot";
+        LAUREL_QUOTE.innerText = "It is hot";
     }
 }
+
+// David's Dojo stuff (shows moving elements, array/JSON notation)
+const DAVID_HEAD = document.getElementById("david-dojo-david");
+const OPPONENT_HEAD = document.getElementById("david-dojo-opponent");
+
+const JIGGLE_ELEMENTS = [
+    {
+        "element": DAVID_HEAD,
+        "original_left": -1,
+        "original_top": -1,
+        "jiggle_amount": 3
+    },
+    {
+        "element": OPPONENT_HEAD,
+        "original_left": -1,
+        "original_top": -1,
+        "jiggle_amount": 3
+    }
+]
+
+// Set original position coordinates
+for (let i=0; i < JIGGLE_ELEMENTS.length; i++) {
+    JIGGLE_ELEMENTS[i].original_left = JIGGLE_ELEMENTS[i].element.offsetLeft;
+    JIGGLE_ELEMENTS[i].original_top = JIGGLE_ELEMENTS[i].element.offsetTop;
+}
+
+console.log(JIGGLE_ELEMENTS);
+
+// Don't go into details on async function, just explain that it means other stuff can run/it won't block BUT we can't depend on anything outside it being run in a certain order after it's called
+async function jiggle_elements() {
+    JIGGLE_ELEMENTS.forEach((jiggleEl) => {
+        jiggleEl.element.style.left = `${jiggleEl.original_left
+            + Math.random()*jiggleEl.jiggle_amount}px`;
+        jiggleEl.element.style.top = `${jiggleEl.original_top
+            + Math.random()*jiggleEl.jiggle_amount}px`;
+    });
+    // NOTE: This is not the proper way of doing animations
+    setTimeout(jiggle_elements, 10);
+}
+
+jiggle_elements();
+
+// finally, introduce arrow functions as a shorthand
+const FIGHT_BUTTON = document.getElementById("david-dojo-fight");
+FIGHT_BUTTON.addEventListener("click", () => {JIGGLE_ELEMENTS[0].jiggle_amount = 20});
