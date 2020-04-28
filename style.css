@@ -3,7 +3,7 @@ body {
     color: #ebeff0;
     font-family: 'Open Sans', sans-serif; /*Explain how all/most "children" elements inside of this one will "inherit" these styles and use the same font/color/font-size*/
 
-    /*Don't change padding/margin to 0 until the nav menu*/
+    /*Don't change padding/margin to 0 until styling the nav menu, to show why they're needed*/
     padding: 0;
     margin: 0;
 }
@@ -41,10 +41,10 @@ a {
 }
 a:hover {
     text-decoration: underline;
-    /*Emphasize this is a normal CSS block and we could've done absolutely anything*/
+    /*Emphasize this is a normal CSS block and we could've done absolutely anything here we wanted*/
 }
 
-/*Make styling the navigation the first big piece we style (probably give its own video?); introduce margin/padding, width/height, and flex-box basics here*/
+/*Make styling the navigation the first big piece we style (probably give its own video section?); introduce margin/padding, width/height, and flex-box basics here*/
 
 #navigation {
     display: flex;
@@ -136,5 +136,5 @@ a:hover {
 #david-dojo-fight:hover {
     padding: 10px;
     background: url("img/david_karate.PNG");
-    background-size: cover; /*Note background is way too zoomed in at first, but we can adjust that*/
+    background-size: cover; /*Note background is way too zoomed in at first, but we can adjust that with this setting*/
 }
